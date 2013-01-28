@@ -16,8 +16,8 @@ def install_deps():
 
 class do_develop(develop):
     def run(self):
-        develop.run(self)
         install_deps()
+        develop.run(self)
 
 
 setup(
