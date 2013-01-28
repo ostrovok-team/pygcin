@@ -8,6 +8,8 @@ DESCRIPTION = 'Python wrapper for gcin (http://github.com/4u/gcin'
 def install_deps():
     print "Installing dependencies"
     cdir = os.path.abspath(os.path.dirname(__file__))
+    os.chdir(cdir)
+    check_call(['pip', 'submodule', 'update', '--force'])
     os.chdir(os.path.join(cdir, 'pygcin/gcin'))
     check_call(['npm', 'install', '.'])
     os.chdir(cdir)
