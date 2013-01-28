@@ -1,0 +1,3 @@
+[submodule "pygcin/gcin"]
+	path = pygcin/gcin
+	url = git@github.com:4u/gcin
