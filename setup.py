@@ -23,7 +23,7 @@ class do_develop(develop):
 setup(
     cmdclass={'develop': do_develop,},
     name='pygcin',
-    version='0.1',
+    version='0.11',
     packages=['pygcin'],
     package_dir={'pygcin': '.'},
     package_data={'pygcin': ['pygcin/*']},
