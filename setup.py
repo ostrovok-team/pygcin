@@ -1,4 +1,6 @@
+import glob
 import os
+import shutil
 from setuptools import setup
 from setuptools.command.develop import develop
 from subprocess import check_call
@@ -11,6 +13,11 @@ def install_deps():
     os.chdir(cdir)
     check_call(['git', 'submodule', 'update', '--init', '--force'])
     os.chdir(os.path.join(cdir, 'pygcin/gcin'))
+    for filename in glob.glob('.git*'):
+        if os.path.isfile(filename):
+            os.remove(filename)
+        else:
+            shutil.rmtree(filename)
     check_call(['npm', 'install', '.'])
     os.chdir(cdir)
 
