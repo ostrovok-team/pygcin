@@ -11,6 +11,7 @@ def install_deps():
     print "Installing dependencies"
     cdir = os.path.abspath(os.path.dirname(__file__))
     os.chdir(cdir)
+    shutil.rmtree('pygcin/gcin', ignore_errors=True)
     check_call(['git', 'submodule', 'update', '--init', '--force'])
     os.chdir(os.path.join(cdir, 'pygcin/gcin'))
     for filename in glob.glob('.git*'):
